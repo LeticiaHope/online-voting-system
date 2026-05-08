@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /evote/voter/
+
+# If the requested file/folder does not exist, route to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?name=$1 [L,QSA]
